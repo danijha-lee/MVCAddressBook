@@ -32,7 +32,7 @@ namespace MVCAddressBook
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseNpgsql(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    ConnectionService.GetConnectionString(Configuration)));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
